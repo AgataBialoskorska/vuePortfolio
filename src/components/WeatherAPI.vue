@@ -49,15 +49,15 @@ export default {
 				const response = await axios.get(URL)
 				const temp = response.data.main.temp
 				const hum = response.data.main.humidity
-				const win = response.data.wind.speed
 				const temFeel = response.data.main.feels_like
+				const win = response.data.wind.speed
 				const sun = response.data.sys.sunset
 				const weatherDes = response.data.weather[0].description
 				this.city = `${response.data.name}`
 				this.temperature = Math.floor(temp) + '℃'
 				this.humidity = hum + '%'
-				this.wind = win + ' km/h'
 				this.tempFeel = `${Math.floor(temFeel)}℃`
+				this.wind = win + ' km/h'
 				this.sunset = this.localeSunset(sun, 'UTC') + ' (UTC)'
 				this.description = weatherDes
 			} catch (error) {
@@ -78,16 +78,14 @@ export default {
 </script>
 
 <template>
+	<a class="click" @click="getWeather">
+	</a>
 	<div class="getWeather">
-		<a class="click" @click="getWeather">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Weather-sun-clouds-shower.svg/2048px-Weather-sun-clouds-shower.svg.png" />
-		</a>
 		<div class="cityName">City: {{ city }}</div>
 		<div class="temperature">Temperature: {{ temperature }}</div>
+		<div class="tempFeel">Feel temp.: {{ tempFeel }}</div>
 		<div class="humidity">Humidity: {{ humidity }}</div>
 		<div class="wind">Wind speed: {{ wind }}</div>
-		<div class="tempFeel">Feel temp.: {{ tempFeel }}</div>
 		<div class="sunset">Time of sunset: {{ sunset }}</div>
 		<div class="description">Description: {{ description }}</div>
 	</div>
@@ -100,16 +98,8 @@ export default {
 	flex-wrap: nowrap;
 	align-items: center;
 }
-.click {
-	margin: 1em;
-	padding: 10px;
-	border: outset 1px;
-	border-radius: 50%;
-	text-align: center;
-	width: 100px;
-}
-img {
-	max-width: 50px;
-	max-height: 50px;
+.cityName {
+	font-weight: bold;
+	color: var(--green);
 }
 </style>
