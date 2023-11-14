@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<h2 class="green">Few words about me.</h2>
+		<h2>Few words about me.</h2>
 		<h3>
 			Hi there! I’m an aspiring frontend engineer with not-so-obvious past
 			experience. I used to work in customer service, accounting, art shop,
@@ -12,5 +12,4 @@
 		</h3>
 	</div>
 </template>
-<style scoped>
-</style>
+

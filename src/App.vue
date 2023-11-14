@@ -26,6 +26,6 @@ header {
 	justify-content: center;
 }
 .content img{
-	width: 100px;
+	max-width: 100px;
 }
 </style>
