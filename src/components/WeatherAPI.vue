@@ -95,10 +95,8 @@
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
-		align-items: center;
 	}
 	.cityName {
 		font-weight: bold;
-		color: var(--green);
 	}
 </style>

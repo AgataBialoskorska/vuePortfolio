@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<h2 class="green">I work with:</h2>
 		<div class="gridStack">
 			<i class="fa-brands fa-square-github"></i>
 			<i class="fa-brands fa-node"></i>

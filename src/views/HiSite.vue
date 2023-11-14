@@ -1,6 +1,6 @@
 <template name="hi">
 	<img alt="my photo" class="photo" src="@/components/img/agataCV.jpeg" />
-	<h1 class="green">Hi, I am Agata</h1>
+	<h1>Hi, I am Agata</h1>
 </template>
 
 <style scoped>
