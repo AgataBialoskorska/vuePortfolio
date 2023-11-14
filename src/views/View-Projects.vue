@@ -103,4 +103,7 @@
 		max-width: 50px;
 		max-height: 50px;
 	}
+	a {
+		padding: 0 0.4em;
+	}
 </style>

@@ -27,7 +27,7 @@
 		width: 80%;
 	}
 	.window:hover {
-		background-color: black;
+		background-color: rgba(0, 20, 12, 0.9);
 		transform: scale(1.05);
 		transition: transform 500ms ease-in-out;
 		z-index: 99;
