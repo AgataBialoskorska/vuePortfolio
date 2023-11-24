@@ -19,6 +19,11 @@ const router = createRouter({
 			name: 'projects',
 			component: () => import('../views/View-Projects.vue'),
 		},
+		{
+			path: '/hangman',
+			name: 'Hangman',
+			component: () => import('../components/GameHangman.vue'),
+		},
 	],
 })
 
