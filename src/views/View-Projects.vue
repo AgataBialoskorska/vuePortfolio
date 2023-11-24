@@ -54,12 +54,10 @@
 
 	<TemplateSkills>
 		<template #title>
-			<a
-				href="https://agatabialoskorska.github.io/my-portfolio/projects/hangman/hangman.html"
-			>
+			<RouterLink to="../hangman">
 				<i class="fa-solid fa-angles-right"></i>
 				Wanna play Hangman session?
-			</a>
+			</RouterLink>
 		</template>
 		<template #left>
 			<a
