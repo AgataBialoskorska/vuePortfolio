@@ -3,7 +3,7 @@
 		data() {
 			return {
 				showAlphabet: true,
-				passArr: [
+				passwordArray: [
 					'Practice makes perfect',
 					'East or west, home is best',
 					'A friend in need is a friend indeed',
@@ -15,11 +15,11 @@
 					'Better an open enemy than a false friend',
 					'Every man has his faults',
 				],
-				pass: '',
-				passLength: 0,
+				password: '',
+				passwordLength: 0,
 				trying: 0,
-				passSecret: [],
-				guessedLetters: [],
+				passwordSecret: [],
+				clickedLetters: [],
 				alphabet: Array.from({ length: 26 }, (_, i) =>
 					String.fromCharCode(65 + i)
 				),
@@ -37,33 +37,33 @@
 			},
 			initializeGame() {
 				this.showAlphabet = true
-				this.pass =
-					this.passArr[
-						Math.floor(Math.random() * this.passArr.length)
+				this.password =
+					this.passwordArray[
+						Math.floor(Math.random() * this.passwordArray.length)
 					].toUpperCase()
-				this.passLength = this.pass.length
+				this.passwordLength = this.password.length
 				this.trying = 0
-				this.passSecret = this.pass
+				this.passwordSecret = this.password
 					.split('')
 					.map(char => (char === ' ' || char === ',' ? char : '-'))
-				this.guessedLetters = []
+				this.clickedLetters = []
 				this.wonGame = false
 				this.lostGame = false
 				this.resultMessage = ''
-				//console.log(this.pass)
+				//console.log(this.password)
 			},
 			check(letter) {
-				if (this.guessedLetters.includes(letter)) {
+				if (this.clickedLetters.includes(letter)) {
 					return
 				}
 
-				this.guessedLetters.push(letter)
-
+				this.clickedLetters.push(letter)
+				// console.log(this.clickedLetters);
 				let letterFound = false
 
-				for (let i = 0; i < this.passLength; i++) {
-					if (this.pass[i] === letter) {
-						this.passSecret.splice(i, 1, letter)
+				for (let i = 0; i < this.passwordLength; i++) {
+					if (this.password[i] === letter) {
+						this.passwordSecret.splice(i, 1, letter)
 						letterFound = true
 					}
 				}
@@ -75,7 +75,7 @@
 					}
 				}
 
-				if (!this.passSecret.includes('-')) {
+				if (!this.passwordSecret.includes('-')) {
 					this.endGame(true)
 				}
 			},
@@ -105,14 +105,14 @@
 		<h1>Hangman Game</h1>
 		<img :src="'src/components/img/s' + trying + '.jpg'" alt="Hangman Image" />
 		<div class="password">
-			<span v-for="(letter, index) in passSecret" :key="index">
+			<span v-for="(letter, index) in passwordSecret" :key="index">
 				{{
 					letter === ' ' || letter === ','
 						? letter
-						: guessedLetters.includes(letter)
+						: clickedLetters.includes(letter)
 						? letter
 						: lostGame
-						? this.pass[index]
+						? this.password[index]
 						: '-'
 				}}
 			</span>
@@ -123,10 +123,11 @@
 				:key="index"
 				@click="check(letter)"
 				:class="{
-					disabled: guessedLetters.includes(letter),
-					guessed: guessedLetters.includes(letter) && pass.indexOf(letter) > -1,
+					disabled: clickedLetters.includes(letter),
+					guessed:
+						clickedLetters.includes(letter) && password.indexOf(letter) > -1,
 					notguessed:
-						guessedLetters.includes(letter) && pass.indexOf(letter) === -1,
+						clickedLetters.includes(letter) && password.indexOf(letter) === -1,
 				}"
 			>
 				{{ letter }}
@@ -175,6 +176,9 @@
 	.alphabet span {
 		width: 45px;
 		text-align: center;
+	}
+	.alphabet span:hover {
+		cursor: pointer;
 	}
 	.guessed {
 		color: greenyellow;
