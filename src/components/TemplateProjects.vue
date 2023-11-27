@@ -19,7 +19,7 @@
 		grid-template-areas:
 			'title right'
 			'left right';
-		grid-template-columns: 0.7fr 1fr;
+		grid-template-columns: 0.8fr 1fr;
 		border: 2px outset;
 		border-radius: 15px;
 		transform: scale(1);
@@ -35,7 +35,7 @@
 	.window > * {
 		display: flex;
 		align-items: center;
-		padding: 10px;
+		padding: 0.5em;
 	}
 
 	.window > h3 {
@@ -48,5 +48,10 @@
 
 	.window > p {
 		grid-area: right;
+	}
+	@media (max-width: 1280px) {
+		.window {
+			width: 80vmin;
+		}
 	}
 </style>
