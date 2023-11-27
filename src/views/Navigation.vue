@@ -11,9 +11,9 @@
 <style scoped>
 	nav {
 		width: 100%;
-		font-size: 1rem;
+		font-size: 1.5em;
 		text-align: center;
-		padding: 2rem 0;
+		padding: 1.5em 0;
 	}
 
 	nav a.router-link-exact-active {
@@ -26,7 +26,7 @@
 
 	nav a {
 		display: inline-block;
-		padding: 0 1rem;
+		padding: 0 1em;
 		border-left: 1px solid var(--borders);
 	}
 
@@ -35,8 +35,7 @@
 	}
 	@media (max-width: 1280px) {
 		nav {
-			margin-left: -1rem;
-			font-size: 1.5rem;
+			font-size: 1.5em;
 		}
 	}
 </style>

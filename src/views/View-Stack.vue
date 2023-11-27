@@ -25,7 +25,7 @@
 		color: var(--green);
 		margin: 0.5em 1em;
 	}
-	@media (max-width: 1280px) and (orientation: portrait) {
+	@media (max-width: 1280px) {
 		.gridStack {
 			max-width: 80%;
 			margin-top: 2vh;

@@ -34,7 +34,7 @@
 		</a>
 
 		<a
-			href="https://www.linkedin.com/in/agata-bia%C5%82osk%C3%B3rska-b77b73134"
+			href="https://www.linkedin.com/in/agatabialoskorska"
 			target="_blank"
 			rel="noopener"
 			@mouseenter="aHover"
@@ -57,7 +57,7 @@
 		padding: 0 0.5em;
 	}
 
-	@media (max-width: 1280px) and (orientation: portrait) {
+	@media (max-width: 1280px) {
 		h2 {
 			padding-left: 0.5em;
 		}

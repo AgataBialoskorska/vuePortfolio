@@ -21,7 +21,7 @@
 	h2 {
 		padding-bottom: 0.5em;
 	}
-	@media (max-width: 1280px) and (orientation: portrait) {
+	@media (max-width: 1280px) {
 		.home {
 			margin: 3vmin auto;
 			max-width: 70%;

@@ -194,7 +194,7 @@
 		padding: 1vmin;
 		margin: 10px auto;
 	}
-	@media (max-width: 1280px) and (orientation: portrait) {
+	@media (max-width: 1280px) {
 		.gameHangman {
 			width: 70vmin;
 			margin: auto;
