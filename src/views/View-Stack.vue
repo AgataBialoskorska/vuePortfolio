@@ -15,21 +15,20 @@
 
 <style scoped>
 	.gridStack {
-		margin-left: 2em;
+		margin: auto;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 10px;
-		max-width: 50%;
 	}
 	.gridStack > * {
 		font-size: 3em;
 		color: var(--green);
-		margin: 0.5em;
+		margin: 0.5em 1em;
 	}
 	@media (max-width: 1280px) and (orientation: portrait) {
 		.gridStack {
-			max-width: 100%;
-			margin: 10vmin auto;
+			max-width: 80%;
+			margin-top: 2vh;
 		}
 		.gridStack > * {
 			font-size: 8vmin;

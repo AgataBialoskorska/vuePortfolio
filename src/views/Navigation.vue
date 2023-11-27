@@ -33,8 +33,7 @@
 	nav a:first-of-type {
 		border: 0;
 	}
-
-	@media (min-width: 1024px) {
+	@media (max-width: 1280px) {
 		nav {
 			margin-left: -1rem;
 			font-size: 1.5rem;
