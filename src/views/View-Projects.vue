@@ -75,9 +75,7 @@
 
 		<template #left>
 			<a class="click" @click="getWeather">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Weather-sun-clouds-shower.svg/2048px-Weather-sun-clouds-shower.svg.png"
-				/>
+				<i class="fa-solid fa-cloud-sun-rain"></i>
 			</a>
 		</template>
 		<template #right>
@@ -90,16 +88,15 @@
 		margin: 1em;
 		border: outset 1px var(--green);
 		border-radius: 50%;
-		text-align: center;
-		display: flex;
-		align-items: center;
 		margin: auto;
 		padding: 1em;
 		cursor: pointer;
+		width: 8vmin;
+		height: 8vmin;
 	}
-	img {
-		max-width: 50px;
-		max-height: 50px;
+	.click svg {
+		width: 100%;
+		height: 100%;
 	}
 	a {
 		padding: 0 0.4em;

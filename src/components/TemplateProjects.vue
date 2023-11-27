@@ -35,7 +35,7 @@
 	.window > * {
 		display: flex;
 		align-items: center;
-		padding: 10px;
+		padding: 1em;
 	}
 
 	.window > h3 {

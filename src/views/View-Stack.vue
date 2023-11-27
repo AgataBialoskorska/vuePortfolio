@@ -1,25 +1,21 @@
 <template>
-	<div>
-		<div class="gridStack">
-			<i class="fa-brands fa-square-github"></i>
-			<i class="fa-brands fa-node"></i>
-			<i class="fa-brands fa-vuejs"></i>
-			<i class="fa-brands fa-square-js"></i>
-			<i class="fa-brands fa-html5"></i>
-			<i class="fa-brands fa-css3"></i>
-			<i class="fa-brands fa-react"></i>
-			<i class="fa-brands fa-python"></i>
-			<i class="fa-brands fa-aws"></i>
-			<i class="fa-brands fa-wordpress"></i>
-		</div>
+	<div class="gridStack">
+		<i class="fa-brands fa-square-github" style="color: rgb(255, 255, 255)"></i>
+		<i class="fa-brands fa-node" style="color: rgb(104, 159, 99)"></i>
+		<i class="fa-brands fa-vuejs" style="color: rgb(65, 184, 131)"></i>
+		<i class="fa-brands fa-square-js" style="color: rgb(247, 223, 30)"></i>
+		<i class="fa-brands fa-html5" style="color: rgb(241, 101, 41)"></i>
+		<i class="fa-brands fa-css3" style="color: rgb(0, 128, 255)"></i>
+		<i class="fa-brands fa-react" style="color: rgb(97, 218, 251)"></i>
+		<i class="fa-brands fa-python" style="color: rgb(255, 222, 87, 1)"></i>
+		<i class="fa-brands fa-aws" style="color: rgb(255, 153, 0)"></i>
+		<i class="fa-brands fa-wordpress" style="color: rgb(0, 116, 154)"></i>
 	</div>
 </template>
 
 <style scoped>
-	div:first-child {
-		margin-left: 2em;
-	}
 	.gridStack {
+		margin-left: 2em;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 10px;
@@ -28,6 +24,15 @@
 	.gridStack > * {
 		font-size: 3em;
 		color: var(--green);
-		padding: 1em 1em 0 0;
+		margin: 0.5em;
+	}
+	@media (max-width: 1280px) and (orientation: portrait) {
+		.gridStack {
+			max-width: 100%;
+			margin: 10vmin auto;
+		}
+		.gridStack > * {
+			font-size: 8vmin;
+		}
 	}
 </style>

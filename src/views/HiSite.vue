@@ -9,4 +9,9 @@
 		border-radius: 50%;
 		width: 40%;
 	}
+	@media (max-width: 1280px) {
+		.photo {
+			max-width: 15vmin;
+		}
+	}
 </style>
