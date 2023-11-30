@@ -26,6 +26,7 @@
 				wonGame: false,
 				lostGame: false,
 				resultMessage: '',
+				color: '',
 			}
 		},
 		created() {
@@ -50,6 +51,7 @@
 				this.wonGame = false
 				this.lostGame = false
 				this.resultMessage = ''
+				this.color = ''
 				//console.log(this.password)
 			},
 			check(letter) {
@@ -82,11 +84,13 @@
 			endGame(isWin) {
 				if (isWin && !this.lostGame) {
 					this.wonGame = true
-					this.resultMessage = 'Congratulations! You won!'
+					this.resultMessage = 'Well done! You guessed the password!'
+					this.color = 'lime'
 					this.showAlphabet = false
 				} else {
 					this.lostGame = true
-					this.resultMessage = 'Oops... You lost. Try again!'
+					this.resultMessage = 'Oh sorry, try again 😉'
+					this.color = 'red'
 					this.showAlphabet = false
 				}
 			},
@@ -97,7 +101,7 @@
 	}
 </script>
 <template>
-	<div class="gameHangman">
+	<div class="gameHangman" :style="{ borderColor: color }">
 		<RouterLink to="./projects">
 			<i class="fa-solid fa-angles-left"></i>
 			back
@@ -133,7 +137,11 @@
 				{{ letter }}
 			</span>
 		</div>
-		<div class="result" :class="{ won: wonGame, loose: lostGame }">
+		<div
+			class="result"
+			:class="{ won: wonGame, loose: lostGame }"
+			:style="{ color: color }"
+		>
 			{{ resultMessage }}
 		</div>
 		<a class="reset" @click="resetGame">Play Again</a>
@@ -148,7 +156,13 @@
 </template>
 <style scoped>
 	.gameHangman {
-		border: outset 1px;
+		background-image: linear-gradient(
+			180deg,
+			rgba(140, 0, 255, 0.15) 0%,
+			rgba(244, 0, 161, 0.15) 61%,
+			rgba(140, 0, 255, 0.15) 100%
+		);
+		border: solid 1px;
 		border-radius: 30px;
 		padding: 1.5em;
 	}
@@ -165,8 +179,8 @@
 	.password {
 		margin: 1em auto;
 		font-size: 1.5em;
-		display: flex;
-		justify-content: space-between;
+		text-align: center;
+		letter-spacing: 0.15em;
 	}
 	.alphabet {
 		display: flex;

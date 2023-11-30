@@ -61,7 +61,7 @@
 		</template>
 		<template #left>
 			<a
-				href="https://github.com/AgataBialoskorska/my-portfolio/tree/master/projects/hangman"
+			href="https://github.com/AgataBialoskorska/vuePortfolio/blob/master/src/components/GameHangman.vue"
 			>
 				GH Repository
 			</a>
