@@ -59,7 +59,7 @@
 
 	@media (max-width: 1280px) {
 		h2 {
-			padding-left: 0.5em;
+			text-align: center;
 		}
 		.contact a {
 			font-size: max(3vmin, 30px);

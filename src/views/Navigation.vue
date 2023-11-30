@@ -35,7 +35,9 @@
 	}
 	@media (max-width: 1280px) {
 		nav {
-			font-size: 1.5em;
+			font-size: max(1.5em, 16px);
+			display: flex;
+			justify-content: center;
 		}
 	}
 </style>
