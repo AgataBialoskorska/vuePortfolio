@@ -1,15 +1,20 @@
 <script>
 	import TemplateSkills from '../components/TemplateProjects.vue'
 	import WeatherAPI from '../components/WeatherAPI.vue'
+	import AirlyAPI from '../components/AirlyApi.vue'
 
 	export default {
 		components: {
 			TemplateSkills,
 			WeatherAPI,
+			AirlyAPI,
 		},
 		methods: {
 			getWeather() {
-				this.$refs.getApi.getWeather()
+				this.$refs.getApiWeather.getWeather()
+			},
+			getAirly() {
+				this.$refs.getApiAirly.getAirly()
 			},
 		},
 	}
@@ -24,9 +29,7 @@
 			</a>
 		</template>
 		<template #left>
-			<a href="https://github.com/JakubBialoskorski/bialoskorski-eu/pull/64">
-				GH Repository
-			</a>
+			<a href="https://github.com/JakubBialoskorski/bialoskorski-eu/pull/64">GH Repository</a>
 		</template>
 		<template #right>Refactor of Next.js webpage</template>
 	</TemplateSkills>
@@ -45,9 +48,7 @@
 	<TemplateSkills>
 		<template #title></template>
 		<template #left>
-			<a href="https://github.com/AgataBialoskorska/hello-world">
-				GH Repository
-			</a>
+			<a href="https://github.com/AgataBialoskorska/hello-world">GH Repository</a>
 		</template>
 		<template #right>"Hello World" in several programming languages</template>
 	</TemplateSkills>
@@ -60,15 +61,11 @@
 			</RouterLink>
 		</template>
 		<template #left>
-			<a
-			href="https://github.com/AgataBialoskorska/vuePortfolio/blob/master/src/components/GameHangman.vue"
-			>
+			<a href="https://github.com/AgataBialoskorska/vuePortfolio/blob/master/src/components/GameHangman.vue">
 				GH Repository
 			</a>
 		</template>
-		<template #right>
-			Hangman game created with Vanilla Java Script, rewrited to Vue.js
-		</template>
+		<template #right>Hangman game created with Vanilla Java Script, rewrited to Vue.js</template>
 	</TemplateSkills>
 	<TemplateSkills>
 		<template #title>Click icon and check random city weather</template>
@@ -79,7 +76,23 @@
 			</a>
 		</template>
 		<template #right>
-			<WeatherAPI ref="getApi" />
+			<WeatherAPI ref="getApiWeather" />
+		</template>
+	</TemplateSkills>
+	<TemplateSkills>
+		<template #title>
+			Click the icon and check
+			<br />
+			what the air is like in the selected city?
+		</template>
+
+		<template #left>
+			<a class="click" @click="getAirly">
+				<i class="fa-solid fa-lungs"></i>
+			</a>
+		</template>
+		<template #right>
+			<AirlyAPI ref="getApiAirly" />
 		</template>
 	</TemplateSkills>
 </template>
