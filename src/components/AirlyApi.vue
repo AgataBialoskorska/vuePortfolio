@@ -7,10 +7,10 @@
 			<option value="Poznan">Poznan</option>
 		</select>
 		<p>Last Measurement Time: {{ time }} UTC</p>
-		<p>PM10: {{ pm10 }}</p>
-		<p>PM2.5: {{ pm25 }}</p>
-		<p>PM1: {{ pm1 }}</p>
-		<p>Temperature: {{ temp }}*C</p>
+		<p>PM10: {{ pm10 }} µg/m³</p>
+		<p>PM2.5: {{ pm25 }} µg/m³</p>
+		<p>PM1: {{ pm1 }} µg/m³</p>
+		<p>Temperature: {{ temp }}℃</p>
 		<p>Humidity: {{ hum }}%</p>
 	</div>
 </template>
