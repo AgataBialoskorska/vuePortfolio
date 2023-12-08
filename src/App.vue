@@ -1,15 +1,15 @@
 <script setup>
 	import { RouterView } from 'vue-router'
-	import Navigation from './views/Navigation.vue'
-	import HiSite from './views/HiSite.vue'
-	import Contact from './views/Contact.vue'
-	import Cookies from './components/Cookies.vue'
+	import Navigation from './views/NavigationElement.vue'
+	import Hi from './views/HiElement.vue'
+	import Contact from './views/ContactElement.vue'
+	import Cookies from './components/CookieElement.vue'
 </script>
 
 <template>
 	<header>
 		<Navigation />
-		<HiSite />
+		<Hi />
 		<Contact />
 	</header>
 	<div class="content"><RouterView /></div>

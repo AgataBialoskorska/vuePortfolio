@@ -1,4 +1,5 @@
 <script>
+	import axios from 'axios'
 	export default {
 		data() {
 			return {
@@ -44,8 +45,7 @@
 			async getWeather() {
 				try {
 					const randomCity = await this.getRandomCity()
-					const URL =
-						this.API_LINK + randomCity + atob(this.API_KEY) + this.API_UNITS
+					const URL = this.API_LINK + randomCity + atob(this.API_KEY) + this.API_UNITS
 					const response = await axios.get(URL)
 					const temp = response.data.main.temp
 					const hum = response.data.main.humidity

@@ -1,5 +1,6 @@
 <script>
 	export default {
+		name: 'CookieElement',
 		data() {
 			return {
 				checking: false,
