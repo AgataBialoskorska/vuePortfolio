@@ -52,7 +52,6 @@
 		</template>
 		<template #right>"Hello World" in several programming languages</template>
 	</TemplateSkills>
-
 	<TemplateSkills>
 		<template #title>
 			<RouterLink to="../hangman">
@@ -98,7 +97,7 @@
 </template>
 <style scoped>
 	.click {
-		margin: 1em;
+		margin: 0.6em;
 		border: outset 1px var(--green);
 		border-radius: 50%;
 		margin: auto;
@@ -113,5 +112,19 @@
 	}
 	a {
 		padding: 0 0.4em;
+	}
+	a:hover {
+		animation: beat 1.2s infinite ease-in-out;
+	}
+	@keyframes beat {
+		0% {
+			transform: scale(1.1);
+		}
+		50% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1.1);
+		}
 	}
 </style>
