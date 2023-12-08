@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="selectStyle">
+		<div class="selectStyle" v-if="selectCity">
 			<select v-model="selectedCity">
 				<option value="" selected disabled>Select the city</option>
 				<option value="Cracow">Cracow</option>
@@ -14,6 +14,15 @@
 			<p>PM10: {{ pm10 }} µg/m³ / {{ pm10p }}%</p>
 			<p>PM2.5: {{ pm25 }} µg/m³ / {{ pm25p }}%</p>
 			<p>PM1: {{ pm1 }} µg/m³</p>
+		</div>
+		<div class="toManyRequests" v-if="toManyRequests">
+			<p>
+				Ooh, sorry!
+				<br />
+				To many requests today.
+				<br />
+				Please, try after midnight.
+			</p>
 		</div>
 	</div>
 </template>
@@ -36,6 +45,8 @@
 					Poznan: ['52.394534', '16.924363'],
 				},
 				showData: false,
+				toManyRequests: false,
+				selectCity: true,
 			}
 		},
 		methods: {
@@ -52,7 +63,7 @@
 				fetch(URL, { method: 'GET', headers })
 					.then(response => {
 						if (!response.ok) {
-							throw new Error('Network response was not ok')
+							throw ((this.toManyRequests = true), (this.selectCity = false), new Error("Something's broken"))
 						}
 						return response.json()
 					})
@@ -104,9 +115,11 @@
 		border: 1px solid var(--green);
 		border-radius: 5px;
 		padding-right: 30px;
-
 	}
 	.selectStyle:hover select {
 		background-color: var(--hover-bg);
+	}
+	.toManyRequests {
+		color: darkred;
 	}
 </style>
