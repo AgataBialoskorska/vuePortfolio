@@ -1,3 +1,8 @@
+<script>
+	export default {
+		name: 'ViewStack',
+	}
+</script>
 <template>
 	<div class="gridStack">
 		<i class="fa-brands fa-square-github" style="color: rgb(255, 255, 255)"></i>

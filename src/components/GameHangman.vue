@@ -20,9 +20,7 @@
 				trying: 0,
 				passwordSecret: [],
 				clickedLetters: [],
-				alphabet: Array.from({ length: 26 }, (_, i) =>
-					String.fromCharCode(65 + i)
-				),
+				alphabet: Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)),
 				wonGame: false,
 				lostGame: false,
 				resultMessage: '',
@@ -33,20 +31,12 @@
 			this.initializeGame()
 		},
 		methods: {
-			goBack() {
-				this.$router.go(-1)
-			},
 			initializeGame() {
 				this.showAlphabet = true
-				this.password =
-					this.passwordArray[
-						Math.floor(Math.random() * this.passwordArray.length)
-					].toUpperCase()
+				this.password = this.passwordArray[Math.floor(Math.random() * this.passwordArray.length)].toUpperCase()
 				this.passwordLength = this.password.length
 				this.trying = 0
-				this.passwordSecret = this.password
-					.split('')
-					.map(char => (char === ' ' || char === ',' ? char : '-'))
+				this.passwordSecret = this.password.split('').map(char => (char === ' ' || char === ',' ? char : '-'))
 				this.clickedLetters = []
 				this.wonGame = false
 				this.lostGame = false
@@ -128,27 +118,17 @@
 				@click="check(letter)"
 				:class="{
 					disabled: clickedLetters.includes(letter),
-					guessed:
-						clickedLetters.includes(letter) && password.indexOf(letter) > -1,
-					notguessed:
-						clickedLetters.includes(letter) && password.indexOf(letter) === -1,
-				}"
-			>
+					guessed: clickedLetters.includes(letter) && password.indexOf(letter) > -1,
+					notguessed: clickedLetters.includes(letter) && password.indexOf(letter) === -1,
+				}">
 				{{ letter }}
 			</span>
 		</div>
-		<div
-			class="result"
-			:class="{ won: wonGame, loose: lostGame }"
-			:style="{ color: color }"
-		>
+		<div class="result" :class="{ won: wonGame, loose: lostGame }" :style="{ color: color }">
 			{{ resultMessage }}
 		</div>
 		<a class="reset" @click="resetGame">Play Again</a>
-		<a
-			class="gh"
-			href="https://github.com/AgataBialoskorska/vuePortfolio/blob/master/src/components/GameHangman.vue"
-		>
+		<a class="gh" href="https://github.com/AgataBialoskorska/vuePortfolio/blob/master/src/components/GameHangman.vue">
 			<i class="fa-brands fa-square-github"></i>
 			GH Repository
 		</a>

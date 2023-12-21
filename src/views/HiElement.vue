@@ -1,4 +1,10 @@
-<template name="hi">
+<script>
+	export default {
+		name: 'HiEl',
+	}
+</script>
+
+<template>
 	<img alt="my photo" class="photo" src="@/components/img/agataCV.jpeg" />
 	<h1>Hi, I am Agata</h1>
 </template>

@@ -1,9 +1,10 @@
 <script>
-	import TemplateSkills from '../components/TemplateProjects.vue'
-	import WeatherAPI from '../components/WeatherAPI.vue'
-	import AirlyAPI from '../components/AirlyApi.vue'
+	import TemplateSkills from '@/components/TemplateProjects.vue'
+	import WeatherAPI from '@/components/WeatherAPI.vue'
+	import AirlyAPI from '@/components/AirlyApi.vue'
 
 	export default {
+		name: 'ViewProjects',
 		components: {
 			TemplateSkills,
 			WeatherAPI,

@@ -1,9 +1,9 @@
 <script setup>
 	import { RouterView } from 'vue-router'
-	import Navigation from './views/NavigationElement.vue'
-	import Hi from './views/HiElement.vue'
-	import Contact from './views/ContactElement.vue'
-	import Cookies from './components/CookieElement.vue'
+	import Navigation from '@/views/NavigationElement.vue'
+	import Hi from '@/views/HiElement.vue'
+	import Contact from '@/views/ContactElement.vue'
+	import Cookies from '@/components/CookieElement.vue'
 </script>
 
 <template>
@@ -28,9 +28,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}
-	.content img {
-		max-width: 100px;
 	}
 	footer {
 		position: fixed;

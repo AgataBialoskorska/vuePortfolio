@@ -1,5 +1,6 @@
 <script>
 	export default {
+		name: 'ContactEl',
 		methods: {
 			aHover(e) {
 				e.target.classList.add('fa-beat')

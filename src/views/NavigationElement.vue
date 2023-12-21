@@ -1,5 +1,11 @@
-<script setup>
+<script>
 	import { RouterLink } from 'vue-router'
+	export default {
+		name: 'NavEl',
+		components: {
+			RouterLink
+		},
+	}
 </script>
 <template name="nav">
 	<nav>

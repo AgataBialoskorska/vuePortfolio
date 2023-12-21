@@ -1,30 +1,38 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import ViewHome from '../views/View-Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+
+// Import dynamic components
+const ViewHome = () => import('@/views/View-Home.vue');
+const ViewStack = () => import('@/views/View-Stack.vue');
+const ViewProjects = () => import('@/views/View-Projects.vue');
+const GameHangman = () => import('@/components/GameHangman.vue');
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: ViewHome,
+  },
+  {
+    path: '/stack',
+    name: 'Stack',
+    component: ViewStack,
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: ViewProjects,
+  },
+  {
+    path: '/hangman',
+    name: 'Hangman',
+    component: GameHangman,
+  },
+  // ... other routes
+];
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
-	routes: [
-		{
-			path: '/',
-			name: 'home',
-			component: ViewHome,
-		},
-		{
-			path: '/stack',
-			name: 'stack',
-			component: () => import('../views/View-Stack.vue'),
-		},
-		{
-			path: '/projects',
-			name: 'projects',
-			component: () => import('../views/View-Projects.vue'),
-		},
-		{
-			path: '/hangman',
-			name: 'Hangman',
-			component: () => import('../components/GameHangman.vue'),
-		},
-	],
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;
