@@ -1,5 +1,6 @@
 <script>
 	export default {
+		name: 'GameHangman',
 		data() {
 			return {
 				showAlphabet: true,
