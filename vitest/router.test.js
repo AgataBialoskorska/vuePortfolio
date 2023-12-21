@@ -3,12 +3,12 @@
  */
 import { beforeEach, test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createMemoryHistory } from 'vue-router'
 import { routes } from '@/router'
 import AppVue from '@/App.vue'
 
 const router = createRouter({
-	history: createWebHistory(),
+	history: createMemoryHistory(),
 	routes: routes,
 })
 
